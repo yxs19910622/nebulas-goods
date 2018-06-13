@@ -12,6 +12,15 @@ public class Goods {
     private Long createTime;
     private Long updateTime;
     private Long userId;
+    private String label;
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
 
     public Long getId() {
         return id;

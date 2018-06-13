@@ -16,5 +16,6 @@ spring:
         web-allow-others: true
       path: /h2-console
       enabled: true
-logging:
-  level: debug
+#logging:
+#  level:
+#    com.snake: DEBUG
