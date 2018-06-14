@@ -16,6 +16,6 @@ spring:
         web-allow-others: true
       path: /h2-console
       enabled: true
-#logging:
-#  level:
-#    com.snake: DEBUG
+multipart:
+    maxFileSize: 5Mb
+    maxRequestSize: 5Mb

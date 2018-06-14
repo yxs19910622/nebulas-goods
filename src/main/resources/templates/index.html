@@ -48,7 +48,7 @@
         <div class="userinfo">
             <div class="user">
                 <ul>
-                    <li><a href="#"><img src="images/user-pic.png" title="user-name" /><span>Ipsum</span></a></li>
+                    <li><a href="#"><img src="images/user-pic.png" title="user-name" /><span>皮皮</span></a></li>
                 </ul>
             </div>
         </div>
@@ -62,7 +62,7 @@
     <div class="wrap">
         <div id="main" role="main">
             <ul id="tiles">
-                <li th:each="goods:${goodsList}" th:onclick="@{'location.href=\'item?id='+${goods.id}+'\''}" >
+                <li th:each="goods:${goodsList}" th:onclick="@{'window.open(\'item?id='+${goods.id}+'\')'}" >
                     <img width="200" height="200" th:src="${goods.imageUrl}"/>
                     <div class="post-info">
                         <div class="post-basic-info">

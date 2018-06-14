@@ -48,4 +48,17 @@ public class ViewController {
         model.addAttribute("comments",comments);
         return "/single-page";
     }
+
+    /**
+     * 新增好物
+     * @return
+     */
+    @RequestMapping("/newGoods")
+    public String newGoods(Long id, ModelMap model) {
+        Goods goods = goodsService.getGoodsById(id);
+        List<Comments> comments = commentsService.listCommentsByGoodsId(id);
+        model.addAttribute("goods",goods);
+        model.addAttribute("comments",comments);
+        return "/new-goods";
+    }
 }

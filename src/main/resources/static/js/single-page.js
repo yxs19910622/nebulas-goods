@@ -1,6 +1,3 @@
-/**
- * Created by yangxs on 2018/6/13.
- */
 function addComments() {
     var comment = $("#input_comment").val();
     var id = GetQueryString("id");

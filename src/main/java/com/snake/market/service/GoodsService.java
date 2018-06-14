@@ -23,11 +23,14 @@ public class GoodsService {
         return goodsMapper.listGoods();
     }
 
-    public Goods getGoodsById(Long id){
+    public Goods getGoodsById(Long id) {
         return goodsMapper.getGoodsById(id);
     }
 
-
+    public int addGoods(Long userId, String title, String url, String label, String message) {
+        Long time = System.currentTimeMillis();
+        return goodsMapper.addGoods(userId, title, url, label, message, time);
+    }
 
 
 }

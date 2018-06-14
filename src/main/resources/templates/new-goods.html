@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>新增好物</title>
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/jquery.fileupload.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/vendor/jquery.ui.widget.js"></script>
+    <script src="js/jquery.iframe-transport.js"></script>
+    <script src="js/jquery.fileupload.js"></script>
+    <script src="js/addGoods.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var $ = jQuery.noConflict();
+        $(function () {
+            $('#activator').click(function () {
+                $('#box').animate({'top': '0px'}, 500);
+            });
+            $('#boxclose').click(function () {
+                $('#box').animate({'top': '-700px'}, 500);
+            });
+        });
+        $(document).ready(function () {
+            $(".toggle_container").hide();
+            $(".trigger").click(function () {
+                $(this).toggleClass("active").next().slideToggle("slow");
+                return false;
+            });
+
+        });
+    </script>
+    <script>
+        $(function () {
+            'use strict';
+            var url = 'http://localhost:8080/goods/upload';
+            $('#fileupload').fileupload({
+                url: url,
+                dataType: 'json',
+                acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+                maxFileSize: 5000,
+                done: function (e, data) {
+                    $('#files').html('');
+                    $('<p/>').text(data.result.fileName).appendTo("#files");
+                    $('#imgUrl').val(data.result.url);
+                },
+                progressall: function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    $('#progress .progress-bar').css(
+                        'width',
+                        progress + '%'
+                    );
+                }
+            }).prop('disabled', !$.support.fileInput)
+                .parent().addClass($.support.fileInput ? undefined : 'disabled');
+        });
+    </script>
+</head>
+<body>
+<label><input id="imgUrl" type="hidden"/></label>
+<div class="header">
+    <div class="wrap">
+        <div class="logo">
+            <a href="index.html"><img src="images/12.png" title="pinbal"/></a>
+        </div>
+        <div class="top-searchbar">
+            <form>
+                <input type="text"/><input type="submit" value=""/>
+            </form>
+        </div>
+        <div class="userinfo">
+            <div class="user">
+                <ul>
+                    <li><a href="#"><img src="images/user-pic.png" title="user-name"/><span>皮皮</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="content">
+    <div class="wrap">
+        <div class="contact-info">
+            <div class="map">
+                <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe>
+                <br/>
+                <small><a
+                        href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265"
+                        style="color:#666;text-align:left;font-size:12px"></a></small>
+            </div>
+            <div class="contact-grids">
+                <form method="post" action="contact-post.html">
+                    <div class="contact-form">
+                        <div class="contact-to">
+                            <input id="title" type="text" class="text" value="商品标题..." onfocus="this.value = '';"
+                                   onblur="if (this.value == '') {this.value = '商品标题...';}"/>
+                            <input id="label" type="text" class="text" value="所属标签:比如酷玩,美食,或自定义..." onfocus="this.value = '';"
+                                   onblur="if (this.value == '') {this.value = '所属标签:比如酷玩,美食,或自定义...';}"/>
+                            <input id="url" type="text" class="text" value="商品所在网址..." onfocus="this.value = '';"
+                                   onblur="if (this.value == '') {this.value = '商品所在网址...';}"/>
+                        </div>
+                        <div class="text2">
+                            <textarea id="message" value="写下详细描述和推荐理由吧.." onfocus="this.value = '';"
+                                      onblur="if (this.value == '') {this.value = '写下详细描述和推荐理由吧..';}">Message..</textarea>
+                        </div>
+                        <div class="container">
+                            <span class="btn btn-success fileinput-button">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                <span>选择图片上传</span>
+                                <input id="fileupload" type="file" name="files[]" multiple="multiple" />
+                            </span>
+                            <br/>
+                            <br/>
+                            <!-- The global progress bar -->
+                            <div id="progress" class="progress">
+                                <div class="progress-bar progress-bar-success"></div>
+                            </div>
+                            <!-- The container for the uploaded files -->
+                            <div id="files" class="files"></div>
+                        </div>
+                        <span><input type="submit" class="" value="提交" onclick="addGoods()"/></span>
+                        <div class="clear"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

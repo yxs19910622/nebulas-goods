@@ -10,4 +10,9 @@
         select * from goods where id = #{id};
     </select>
 
+    <insert id="addGoods">
+        INSERT INTO goods (userId, title, message, imageUrl, createTime, label)
+        VALUES (#{userId}, #{title}, #{message}, #{imageUrl}, #{createTime}, #{label});
+    </insert>
+
 </mapper>

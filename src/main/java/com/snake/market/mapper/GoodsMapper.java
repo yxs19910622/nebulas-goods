@@ -17,4 +17,7 @@ public interface GoodsMapper {
     List<Goods> listGoods ();
 
     Goods getGoodsById(@Param("id") Long id);
+
+    int addGoods(@Param("userId")Long userId, @Param("title")String title, @Param("imageUrl")String url,
+                @Param("label")String label, @Param("message")String message, @Param("createTime")Long createTime);
 }
