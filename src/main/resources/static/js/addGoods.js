@@ -8,10 +8,10 @@ function addGoods(){
     var message = $("#message").val();
     $.ajax({
         type: "get",
-        url: "http://market.pp-snake.com/goods/add",
+        url: "/goods/add",
         data: "userId=1&url="+imgUrl+"&title="+title+"&label="+label+"&message="+message,
         success: function (data) {
-            location.href="/";
+            alert("添加成功!");
         }
     });
 }
