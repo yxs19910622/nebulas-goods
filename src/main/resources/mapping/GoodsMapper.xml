@@ -3,7 +3,12 @@
 <mapper namespace="com.snake.market.mapper.GoodsMapper">
 
     <select id="listGoods" resultType="com.snake.market.model.Goods">
-        select * from goods;
+        select * from goods
+        <where>
+            <if test="search != null">
+                title like concat('%',#{search},'%') or message like concat('%',#{search},'%')
+            </if>
+        </where>
     </select>
 
     <select id="getGoodsById" resultType="com.snake.market.model.Goods">

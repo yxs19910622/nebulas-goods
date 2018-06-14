@@ -30,8 +30,9 @@ public class ViewController {
      * @return
      */
     @RequestMapping("/")
-    public String home(ModelMap model) {
-        List<Goods> goodsList = goodsService.listGoods();
+    public String home(String search, ModelMap model) {
+        model.addAttribute("search",search);
+        List<Goods> goodsList = goodsService.listGoods(search);
         model.addAttribute("goodsList",goodsList);
         return "/index";
     }

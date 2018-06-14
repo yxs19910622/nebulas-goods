@@ -19,8 +19,8 @@ public class GoodsService {
     @Autowired
     private GoodsMapper goodsMapper;
 
-    public List<Goods> listGoods() {
-        return goodsMapper.listGoods();
+    public List<Goods> listGoods(String search) {
+        return goodsMapper.listGoods(search);
     }
 
     public Goods getGoodsById(Long id) {

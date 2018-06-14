@@ -14,10 +14,10 @@ import java.util.List;
  */
 public interface GoodsMapper {
 
-    List<Goods> listGoods ();
+    List<Goods> listGoods(@Param("search") String search);
 
     Goods getGoodsById(@Param("id") Long id);
 
-    int addGoods(@Param("userId")Long userId, @Param("title")String title, @Param("imageUrl")String url,
-                @Param("label")String label, @Param("message")String message, @Param("createTime")Long createTime);
+    int addGoods(@Param("userId") Long userId, @Param("title") String title, @Param("imageUrl") String url,
+                 @Param("label") String label, @Param("message") String message, @Param("createTime") Long createTime);
 }
