@@ -3,7 +3,7 @@
 <head>
     <title>新增好物</title>
     <link href="css/style.css" rel='stylesheet' type='text/css'/>
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/jquery.fileupload.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png"/>
@@ -14,12 +14,12 @@
         window.scrollTo(0, 1);
     } </script>
     <script src="js/jquery.min.js"></script>
-    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <!--<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>-->
     <script src="js/vendor/jquery.ui.widget.js"></script>
     <script src="js/jquery.iframe-transport.js"></script>
     <script src="js/jquery.fileupload.js"></script>
     <script src="js/addGoods.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
         var $ = jQuery.noConflict();
         $(function () {
@@ -42,7 +42,7 @@
     <script>
         $(function () {
             'use strict';
-            var url = 'http://localhost:8080/goods/upload';
+            var url = '/goods/upload';
             $('#fileupload').fileupload({
                 url: url,
                 dataType: 'json',

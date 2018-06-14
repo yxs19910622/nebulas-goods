@@ -11,7 +11,7 @@ function addGoods(){
         url: "/goods/add",
         data: "userId=1&url="+imgUrl+"&title="+title+"&label="+label+"&message="+message,
         success: function (data) {
-            alert("添加成功!");
+            location.href="/";
         }
     });
 }
