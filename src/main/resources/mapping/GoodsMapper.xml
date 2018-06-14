@@ -9,6 +9,7 @@
                 title like concat('%',#{search},'%') or message like concat('%',#{search},'%')
             </if>
         </where>
+        group by createTime desc;
     </select>
 
     <select id="getGoodsById" resultType="com.snake.market.model.Goods">
