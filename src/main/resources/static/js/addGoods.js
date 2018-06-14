@@ -8,7 +8,7 @@ function addGoods(){
     var message = $("#message").val();
     $.ajax({
         type: "get",
-        url: "/goods/add",
+        url: "http://market.pp-snake.com/goods/add",
         data: "userId=1&url="+imgUrl+"&title="+title+"&label="+label+"&message="+message,
         success: function (data) {
             location.href="/";
