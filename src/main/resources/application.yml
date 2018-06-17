@@ -18,6 +18,7 @@ spring:
         web-allow-others: true
       path: /h2-console
       enabled: true
-multipart:
-    maxFileSize: 5Mb
-    maxRequestSize: 5Mb
+  http:
+      multipart:
+        max-file-size: 10Mb
+        max-request-size: 100Mb

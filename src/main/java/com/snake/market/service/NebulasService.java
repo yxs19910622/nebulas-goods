@@ -24,7 +24,7 @@ public class NebulasService {
     private static String wallet = "n1ZaXvhyjmvHT2SvbWRDnaXd9TdAJbYzNU5";
     private static String transaction_1 = "n1yvBuYqxeqKpUsiWjkbDyo8UsRwmevXsbz";
 
-    private static NebulasClient nebulasClient = HttpNebulasClient.create("https://testnet.nebulas.io");
+    private static NebulasClient nebulasClient = HttpNebulasClient.create("https://mainnet.nebulas.io");
     private static Gson gson = new Gson();
 
     public void addGoods(String title, String url, String label, String message) {
