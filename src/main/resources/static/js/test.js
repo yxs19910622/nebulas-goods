@@ -5,7 +5,7 @@ var nebPay = new NebPay();
 var chainnetConfig = {
     mainnet: {
         name: "主网",
-        contractAddress: "n1sRJc54JJzmpabguzz1uodtyR2cECHUXde",
+        contractAddress: "n1yvBuYqxeqKpUsiWjkbDyo8UsRwmevXsbz",
         host: "https://mainnet.nebulas.io",
         payhost: "https://pay.nebulas.io/api/mainnet/pay"
     },
@@ -17,7 +17,7 @@ var chainnetConfig = {
     }
 };
 
-var chainInfo = chainnetConfig["testnet"];
+var chainInfo = chainnetConfig["mainnet"];
 var HttpRequest = require("nebulas").HttpRequest;
 var Neb = require("nebulas").Neb;
 var myneb = new Neb();
