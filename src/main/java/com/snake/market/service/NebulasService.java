@@ -22,7 +22,7 @@ import java.util.List;
 public class NebulasService {
 
     private static String wallet = "n1ZaXvhyjmvHT2SvbWRDnaXd9TdAJbYzNU5";
-    private static String transaction_1 = "n1g7mtjecxtQTT8HHxY1fcrTgkaXEh6Pkb9";
+    private static String transaction_1 = "n1yvBuYqxeqKpUsiWjkbDyo8UsRwmevXsbz";
 
     private static NebulasClient nebulasClient = HttpNebulasClient.create("https://testnet.nebulas.io");
     private static Gson gson = new Gson();
