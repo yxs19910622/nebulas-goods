@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/main.css" />
         <script src="js/jquery.min.js"></script>
         <script src="js/index.js"></script>
+        <script src="js/iconfont.js"></script>
         <script type="text/javascript">
             var $ = jQuery.noConflict();
             $(function() {
@@ -33,6 +34,15 @@
 
             });
         </script>
+        <style type="text/css">
+            .icon {
+                width: 1em; height: 1em;
+                vertical-align: -0.15em;
+                fill: currentColor;
+                overflow: hidden;
+                font-size: 30px;
+            }
+        </style>
     </head>
 <body>
 
@@ -42,7 +52,11 @@
             <a href="/"><img src="images/12.png" title="星云东西" /></a>
         </div>
         <div class="nav-icon">
-            <a href="/newGoods" class="right_bt" id="activator"><span> </span> </a>
+            <a href="/newGoods" class="right_bt" id="activator">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-liuyanmoban"></use>
+                </svg>
+            </a>
         </div>
         <!--<div class="top-searchbar">
             <input th:attr="value=${search}" type="text" id="searchText"/>
