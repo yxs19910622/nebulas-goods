@@ -44,14 +44,14 @@
         <div class="nav-icon">
             <a href="/newGoods" class="right_bt" id="activator"><span> </span> </a>
         </div>
-        <div class="top-searchbar">
+        <!--<div class="top-searchbar">
             <input th:attr="value=${search}" type="text" id="searchText"/>
             <input type="submit" value="" onclick="searchBar()"/>
-        </div>
+        </div>-->
         <div class="userinfo">
             <div class="user">
                 <ul>
-                    <li><a href="#"><img src="images/user-pic.png" title="user-name" /><span>皮皮</span></a></li>
+                    <li><a href="#"><img src="images/user-pic.png" title="user-name" /><span>皮皮蛇</span></a></li>
                 </ul>
             </div>
         </div>
@@ -65,12 +65,12 @@
         <div id="main" role="main">
             <ul id="tiles">
                 <li th:each="goods:${goodsList}" th:onclick="@{'window.open(\'item?id='+${goods.id}+'\')'}" >
-                    <img width="200" height="200" th:src="${goods.imageUrl}"/>
+                    <img width="200" height="200" th:src="${goods.url}"/>
                     <div class="post-info">
                         <div class="post-basic-info">
                             <h3><a href="#" th:text="${goods.title}"></a></h3>
                             <span><a href="#"><label> </label><span th:text="${goods.label}"></span></a></span>
-                            <p th:text="${goods.message}"></p>
+                            <p th:text="${goods.content}"></p>
                         </div>
                     </div>
                 </li>
@@ -82,6 +82,9 @@
 
 <script src="js/jquery.imagesloaded.js"></script>
 <script src="js/jquery.wookmark.js"></script>
+<script src="js/nebPay.js"></script>
+<script src="js/nebulas.js"></script>
+<script src="js/test.js"></script>
 <script type="text/javascript">
     (function ($){
         var $tiles = $('#tiles'),

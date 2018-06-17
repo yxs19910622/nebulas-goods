@@ -4,13 +4,13 @@ import com.snake.market.model.Comments;
 import com.snake.market.model.Goods;
 import com.snake.market.service.CommentsService;
 import com.snake.market.service.GoodsService;
+import com.snake.market.service.NebulasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -25,14 +25,17 @@ public class ViewController {
     @Autowired
     private CommentsService commentsService;
 
+    @Autowired
+    private NebulasService nebulasService;
+
     /**
      * 首页
      * @return
      */
     @RequestMapping("/")
-    public String home(String search, ModelMap model) {
-        model.addAttribute("search",search);
-        List<Goods> goodsList = goodsService.listGoods(search);
+    public String home(ModelMap model) {
+        List<Goods> goodsList = nebulasService.getGoodsList();
+        Collections.reverse(goodsList);
         model.addAttribute("goodsList",goodsList);
         return "/index";
     }
@@ -43,7 +46,7 @@ public class ViewController {
      */
     @RequestMapping("/item")
     public String signle(Long id, ModelMap model) {
-        Goods goods = goodsService.getGoodsById(id);
+        Goods goods = nebulasService.getGoods(id.toString());
         List<Comments> comments = commentsService.listCommentsByGoodsId(id);
         model.addAttribute("goods",goods);
         model.addAttribute("comments",comments);

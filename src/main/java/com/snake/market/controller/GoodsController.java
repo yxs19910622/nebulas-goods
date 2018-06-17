@@ -2,6 +2,7 @@ package com.snake.market.controller;
 
 import com.snake.market.service.CommentsService;
 import com.snake.market.service.GoodsService;
+import com.snake.market.service.NebulasService;
 import com.snake.market.utils.UploadUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,9 @@ public class GoodsController {
 
     @Autowired
     private GoodsService goodsService;
+
+    @Autowired
+    private NebulasService nebulasService;
 
     /**
      * 图片上传
@@ -48,7 +52,7 @@ public class GoodsController {
      * 新增东西
      */
     @RequestMapping(value = "add")
-    public void addGoods(Long userId, String title, String url, String label, String message){
-        goodsService.addGoods(userId, title, url, label, message);
+    public void addGoods(String title, String url, String label, String message){
+        nebulasService.addGoods(title, url, label, message);
     }
 }

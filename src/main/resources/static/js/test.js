@@ -1,3 +1,7 @@
+
+var NebPay = require("nebpay");
+var nebPay = new NebPay();
+
 var chainnetConfig = {
     mainnet: {
         name: "主网",
@@ -20,8 +24,6 @@ var myneb = new Neb();
 myneb.setRequest(new HttpRequest(chainInfo.host));
 var nasApi = myneb.api;
 var dappAddress = chainInfo.contractAddress;
-var NebPay = require("nebpay");
-var nebPay = new NebPay();
 
 
 function getAccountname(){
@@ -35,7 +37,7 @@ function getAccountname(){
 }
 
 
-function addGoods(){
+function addGoods (){
 
     var imgUrl = $("#imgUrl").val();
     var title = $("#title").val();
@@ -45,7 +47,8 @@ function addGoods(){
     var to = dappAddress;
     var value = "0";
     var callFunction = "addGoods";
-    var callArgs = "["+title+","+message+","+imgUrl+","+label+"]";
+    var callArgs = "[\""+title+"\",\""+message+"\",\""+imgUrl+"\",\""+label+"\"]";
+
     //监听
     nebPay.call(to, value, callFunction, callArgs, {
         listener: function(resp){
@@ -77,8 +80,6 @@ function checkPayStatus(txhash) {
                 clearInterval(timerId);
                 var res = receipt.execute_result;
                 console.log("test success return="+res);
-
-
                 getAccountname();
 
             }else if(receipt.status == 0){

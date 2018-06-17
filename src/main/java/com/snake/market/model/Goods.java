@@ -5,22 +5,12 @@ package com.snake.market.model;
  * Created by yangxs on 2018/6/11.
  */
 public class Goods {
+
     private Long id;
-    private String title;//商品抬头
-    private String message;//商品信息
-    private String imageUrl;//商品图片地址
-    private Long createTime;
-    private Long updateTime;
-    private Long userId;
+    private String title;
+    private String content;
+    private String url;
     private String label;
-
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
 
     public Long getId() {
         return id;
@@ -38,43 +28,27 @@ public class Goods {
         this.title = title;
     }
 
-    public String getMessage() {
-        return message;
+    public String getContent() {
+        return content;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getUrl() {
+        return url;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public String getLabel() {
+        return label;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
-    }
-
-    public Long getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setLabel(String label) {
+        this.label = label;
     }
 }

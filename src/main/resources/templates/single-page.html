@@ -43,7 +43,7 @@
         <div class="userinfo">
             <div class="user">
                 <ul>
-                    <li><a href="#"><img src="images/user-pic.png" title="user-name"/><span>皮皮</span></a></li>
+                    <li><a href="#"><img src="images/user-pic.png" title="user-name"/><span>皮皮蛇</span></a></li>
                 </ul>
             </div>
         </div>
@@ -55,9 +55,9 @@
         <div class="single-page">
             <div class="single-page-artical">
                 <div class="artical-content">
-                    <img th:src="${goods.imageUrl}" title="banner1"/>
+                    <img th:src="${goods.url}" title="banner1"/>
                     <h3 th:text="${goods.title}"></h3>
-                    <p th:text="${goods.message}"></p>
+                    <p th:text="${goods.content}"></p>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -69,7 +69,7 @@
                             <a href=""><img src="images/pic12.jpg" alt=""/></a>
                         </div>
                         <div class="grid_text">
-                            <h4 class="style1 list" th:text="${comment.username}"></h4>
+                            <h4 class="style1 list">一位不愿透露姓名的观众</h4>
                             <h3 class="style" th:text="${comment.time}"></h3>
                             <p class="para top" th:text="${comment.content}"></p>
                             <a href="" class="btn1">回复</a>
